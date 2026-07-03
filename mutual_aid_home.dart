@@ -238,8 +238,8 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                   ),
                 ),
                 
-                // Bottom Nav Bar (Hidden during broadcasting/completion modal overlay)
-                if (_currentState != HelpState.broadcasting) _buildBottomNavBar(),
+                // Bottom Nav Bar (Rendered at all times)
+                _buildBottomNavBar(),
               ],
             ),
             
@@ -980,73 +980,99 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
           )
         ],
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
+          topLeft: Radius.circular(32),
+          topRight: Radius.circular(32),
         ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg, vertical: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          // Home
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-            decoration: BoxDecoration(
-              color: AppColors.secondaryContainer,
-              borderRadius: BorderRadius.circular(100),
-            ),
-            child: Row(
-              children: const [
-                Icon(Icons.home, color: AppColors.onSecondaryContainer),
-                SizedBox(width: 4),
-                Text(
-                  'Home',
-                  style: TextStyle(
-                    fontFamily: 'Be Vietnam Pro',
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
+          // Home (Active)
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              decoration: BoxDecoration(
+                color: AppColors.secondaryContainer,
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: const [
+                  Icon(
+                    Icons.home_outlined,
                     color: AppColors.onSecondaryContainer,
+                    size: 24,
                   ),
-                ),
-              ],
+                  SizedBox(height: 2),
+                  Text(
+                    'Home',
+                    style: TextStyle(
+                      fontFamily: 'Be Vietnam Pro',
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.onSecondaryContainer,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           
-          // Tasks
-          IconButton(
-            onPressed: () {},
-            icon: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                Icon(Icons.assignment, color: AppColors.outline),
-                Text(
-                  'Tasks',
-                  style: TextStyle(
-                    fontFamily: 'Be Vietnam Pro',
-                    fontSize: 10,
+          // Tasks (Inactive)
+          GestureDetector(
+            onTap: () {},
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: const [
+                  Icon(
+                    Icons.assignment_outlined,
                     color: AppColors.outline,
+                    size: 24,
                   ),
-                ),
-              ],
+                  SizedBox(height: 2),
+                  Text(
+                    'Tasks',
+                    style: TextStyle(
+                      fontFamily: 'Be Vietnam Pro',
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.outline,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           
-          // Shop
-          IconButton(
-            onPressed: () {},
-            icon: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                Icon(Icons.storefront, color: AppColors.outline),
-                Text(
-                  'Shop',
-                  style: TextStyle(
-                    fontFamily: 'Be Vietnam Pro',
-                    fontSize: 10,
+          // Shop (Inactive)
+          GestureDetector(
+            onTap: () {},
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: const [
+                  Icon(
+                    Icons.storefront_outlined,
                     color: AppColors.outline,
+                    size: 24,
                   ),
-                ),
-              ],
+                  SizedBox(height: 2),
+                  Text(
+                    'Shop',
+                    style: TextStyle(
+                      fontFamily: 'Be Vietnam Pro',
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.outline,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
