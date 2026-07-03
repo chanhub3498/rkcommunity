@@ -213,7 +213,9 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: SafeArea(
+        bottom: false,
         child: Stack(
           children: [
             Column(
@@ -237,9 +239,6 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                     ),
                   ),
                 ),
-                
-                // Bottom Nav Bar (Rendered at all times)
-                _buildBottomNavBar(),
               ],
             ),
             
@@ -247,6 +246,10 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
             if (_currentState == HelpState.completion) _buildCompletionOverlay(),
           ],
         ),
+      ),
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: _buildBottomNavBar(),
       ),
     );
   }
