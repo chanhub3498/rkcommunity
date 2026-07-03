@@ -1,4 +1,3 @@
-import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 
@@ -61,7 +60,8 @@ class MutualAidApp extends StatelessWidget {
     return MaterialApp(
       title: 'Workplace Help',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true, textTheme: GoogleFonts.beVietnamProTextTheme(ThemeData.light().textTheme),
+      theme: ThemeData(
+        useMaterial3: true,
         scaffoldBackgroundColor: AppColors.background,
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.primary,
@@ -191,7 +191,7 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
         margin: const EdgeInsets.symmetric(horizontal: AppSpacing.containerPadding, vertical: 100),
         content: Row(
-          children: [
+          children: const [
             Icon(Icons.favorite, color: AppColors.primaryContainer),
             SizedBox(width: AppSpacing.sm),
             Text(
@@ -285,17 +285,21 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
               const SizedBox(width: AppSpacing.sm),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     'Hello, Alex!',
-                    style: GoogleFonts.beVietnamPro(fontSize: 12,
+                    style: TextStyle(
+                      fontFamily: 'Be Vietnam Pro',
+                      fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: AppColors.outline,
                     ),
                   ),
                   Text(
                     'Workplace Help',
-                    style: GoogleFonts.plusJakartaSans(fontSize: 20,
+                    style: TextStyle(
+                      fontFamily: 'Plus Jakarta Sans',
+                      fontSize: 20,
                       fontWeight: FontWeight.w700,
                       color: AppColors.primary,
                     ),
@@ -320,7 +324,9 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                 const SizedBox(width: 4),
                 Text(
                   '$_credits Credits',
-                  style: GoogleFonts.beVietnamPro(fontSize: 12,
+                  style: const TextStyle(
+                    fontFamily: 'Be Vietnam Pro',
+                    fontSize: 12,
                     fontWeight: FontWeight.w600,
                     color: AppColors.onSecondaryFixedVariant,
                   ),
@@ -352,18 +358,22 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const SizedBox(height: AppSpacing.sm),
-        Text(
+        const Text(
           'How can we help?',
           textAlign: TextAlign.center,
-          style: GoogleFonts.plusJakartaSans(fontSize: 24,
+          style: TextStyle(
+            fontFamily: 'Plus Jakarta Sans',
+            fontSize: 24,
             fontWeight: FontWeight.w700,
             color: AppColors.onSurface,
           ),
         ),
-        Text(
+        const Text(
           'Hold button to broadcast request',
           textAlign: TextAlign.center,
-          style: GoogleFonts.beVietnamPro(fontSize: 14,
+          style: TextStyle(
+            fontFamily: 'Be Vietnam Pro',
+            fontSize: 14,
             color: AppColors.outline,
           ),
         ),
@@ -424,17 +434,21 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                   const SizedBox(width: AppSpacing.sm),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         'Community Spirit',
-                        style: GoogleFonts.beVietnamPro(fontSize: 14,
+                        style: TextStyle(
+                          fontFamily: 'Be Vietnam Pro',
+                          fontSize: 14,
                           fontWeight: FontWeight.w600,
                           color: AppColors.onSurface,
                         ),
                       ),
                       Text(
                         '42 helps completed today',
-                        style: GoogleFonts.beVietnamPro(fontSize: 11,
+                        style: TextStyle(
+                          fontFamily: 'Be Vietnam Pro',
+                          fontSize: 11,
                           color: AppColors.outline,
                         ),
                       ),
@@ -488,10 +502,12 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                           color: AppColors.surfaceContainerHighest,
                           border: Border.all(color: AppColors.surfaceContainerLow, width: 2),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             '+12',
-                            style: GoogleFonts.beVietnamPro(fontSize: 10,
+                            style: TextStyle(
+                              fontFamily: 'Be Vietnam Pro',
+                              fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.onSurface,
                             ),
@@ -539,7 +555,9 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                     ),
                     Text(
                       '$_countdownSeconds',
-                      style: GoogleFonts.plusJakartaSans(fontSize: 24,
+                      style: const TextStyle(
+                        fontFamily: 'Plus Jakarta Sans',
+                        fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primary,
                       ),
@@ -548,17 +566,21 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                 ),
               ),
               const SizedBox(height: AppSpacing.md),
-              Text(
+              const Text(
                 'Broadcasting request...',
-                style: GoogleFonts.plusJakartaSans(fontSize: 20,
+                style: TextStyle(
+                  fontFamily: 'Plus Jakarta Sans',
+                  fontSize: 20,
                   fontWeight: FontWeight.w700,
                   color: AppColors.onSurface,
                 ),
               ),
               const SizedBox(height: AppSpacing.xs),
-              Text(
+              const Text(
                 'You have 3 seconds to cancel',
-                style: GoogleFonts.beVietnamPro(fontSize: 14,
+                style: TextStyle(
+                  fontFamily: 'Be Vietnam Pro',
+                  fontSize: 14,
                   color: AppColors.outline,
                 ),
               ),
@@ -568,7 +590,7 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
               ElevatedButton.icon(
                 onPressed: _cancelBroadcast,
                 icon: const Icon(Icons.close, size: 18),
-                label: Text('Cancel Request'),
+                label: const Text('Cancel Request'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.errorContainer,
                   foregroundColor: AppColors.onErrorContainer,
@@ -614,17 +636,21 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                       color: AppColors.primaryContainer,
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    child: Text(
+                    child: const Text(
                       'ACTIVE',
-                      style: GoogleFonts.beVietnamPro(fontSize: 12,
+                      style: TextStyle(
+                        fontFamily: 'Be Vietnam Pro',
+                        fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: AppColors.onPrimaryContainer,
                       ),
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Req #8821',
-                    style: GoogleFonts.beVietnamPro(fontSize: 12,
+                    style: TextStyle(
+                      fontFamily: 'Be Vietnam Pro',
+                      fontSize: 12,
                       color: AppColors.outline,
                     ),
                   ),
@@ -644,9 +670,11 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
               ),
               const SizedBox(height: AppSpacing.md),
               
-              Text(
+              const Text(
                 'Finding someone to help...',
-                style: GoogleFonts.plusJakartaSans(fontSize: 20,
+                style: TextStyle(
+                  fontFamily: 'Plus Jakarta Sans',
+                  fontSize: 20,
                   fontWeight: FontWeight.w700,
                   color: AppColors.onSurface,
                 ),
@@ -655,7 +683,9 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
               Text(
                 'Your "${_selectedCategory.toUpperCase()} LOAD" request is visible to team members nearby.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.beVietnamPro(fontSize: 14,
+                style: const TextStyle(
+                  fontFamily: 'Be Vietnam Pro',
+                  fontSize: 14,
                   color: AppColors.outline,
                 ),
               ),
@@ -672,7 +702,7 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                       borderRadius: BorderRadius.circular(100),
                       border: Border.all(color: AppColors.outlineVariant.withOpacity(0.3), width: 2),
                     ),
-                    child: Text('Guardhouse Pick-up', style: TextStyle(fontSize: 11)),
+                    child: const Text('Guardhouse Pick-up', style: TextStyle(fontSize: 11)),
                   ),
                   const SizedBox(width: AppSpacing.base),
                   Container(
@@ -682,7 +712,7 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                       borderRadius: BorderRadius.circular(100),
                       border: Border.all(color: AppColors.outlineVariant.withOpacity(0.3), width: 2),
                     ),
-                    child: Text('Need Trolley', style: TextStyle(fontSize: 11)),
+                    child: const Text('Need Trolley', style: TextStyle(fontSize: 11)),
                   ),
                 ],
               )
@@ -730,16 +760,20 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 'Kao-tim! Neoh has accepted!',
-                                style: GoogleFonts.plusJakartaSans(fontSize: 16,
+                                style: TextStyle(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w700,
                                   color: AppColors.onSecondaryContainer,
                                 ),
                               ),
                               Text(
                                 'Arriving in ~2 mins',
-                                style: GoogleFonts.beVietnamPro(fontSize: 14,
+                                style: TextStyle(
+                                  fontFamily: 'Be Vietnam Pro',
+                                  fontSize: 14,
                                   color: AppColors.onSecondaryContainer.withOpacity(0.8),
                                 ),
                               ),
@@ -770,14 +804,16 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
         ElevatedButton.icon(
           onPressed: _helperAccepted ? _finishRequest : null,
           icon: const Icon(Icons.auto_awesome),
-          label: Text('✨ Kao-tim (Done)'),
+          label: const Text('✨ Kao-tim (Done)'),
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primary,
             foregroundColor: Colors.white,
             elevation: 2,
             padding: const EdgeInsets.symmetric(vertical: 16),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-            textStyle: GoogleFonts.plusJakartaSans(fontSize: 16,
+            textStyle: const TextStyle(
+              fontFamily: 'Plus Jakarta Sans',
+              fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -816,19 +852,23 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            const Text(
               'Mission Success!',
               textAlign: TextAlign.center,
-              style: GoogleFonts.plusJakartaSans(fontSize: 28,
+              style: TextStyle(
+                fontFamily: 'Plus Jakarta Sans',
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primary,
               ),
             ),
             const SizedBox(height: AppSpacing.xs),
-            Text(
+            const Text(
               'Who helped you sweat it out today?',
               textAlign: TextAlign.center,
-              style: GoogleFonts.beVietnamPro(fontSize: 16,
+              style: TextStyle(
+                fontFamily: 'Be Vietnam Pro',
+                fontSize: 16,
                 color: AppColors.outline,
               ),
             ),
@@ -850,17 +890,21 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                 elevation: 0,
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-                textStyle: GoogleFonts.plusJakartaSans(fontSize: 16,
+                textStyle: const TextStyle(
+                  fontFamily: 'Plus Jakarta Sans',
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child: Text('Confirm & Give Credits'),
+              child: const Text('Confirm & Give Credits'),
             ),
             const SizedBox(height: AppSpacing.xs),
-            Text(
+            const Text(
               'Both helpers will receive 20 Snack Credits each',
               textAlign: TextAlign.center,
-              style: GoogleFonts.beVietnamPro(fontSize: 11,
+              style: TextStyle(
+                fontFamily: 'Be Vietnam Pro',
+                fontSize: 11,
                 color: AppColors.outline,
               ),
             ),
@@ -908,7 +952,9 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                 const SizedBox(width: AppSpacing.sm),
                 Text(
                   name,
-                  style: GoogleFonts.plusJakartaSans(fontSize: 16,
+                  style: const TextStyle(
+                    fontFamily: 'Plus Jakarta Sans',
+                    fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -956,7 +1002,7 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: [
+                children: const [
                   Icon(
                     Icons.home_outlined,
                     color: AppColors.onSecondaryContainer,
@@ -965,7 +1011,9 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                   SizedBox(height: 2),
                   Text(
                     'Home',
-                    style: GoogleFonts.beVietnamPro(fontSize: 12,
+                    style: TextStyle(
+                      fontFamily: 'Be Vietnam Pro',
+                      fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: AppColors.onSecondaryContainer,
                     ),
@@ -982,7 +1030,7 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: [
+                children: const [
                   Icon(
                     Icons.assignment_outlined,
                     color: AppColors.outline,
@@ -991,7 +1039,9 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                   SizedBox(height: 2),
                   Text(
                     'Tasks',
-                    style: GoogleFonts.beVietnamPro(fontSize: 12,
+                    style: TextStyle(
+                      fontFamily: 'Be Vietnam Pro',
+                      fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: AppColors.outline,
                     ),
@@ -1008,7 +1058,7 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: [
+                children: const [
                   Icon(
                     Icons.storefront_outlined,
                     color: AppColors.outline,
@@ -1017,7 +1067,9 @@ class _MutualAidHomeScreenState extends State<MutualAidHomeScreen> {
                   SizedBox(height: 2),
                   Text(
                     'Shop',
-                    style: GoogleFonts.beVietnamPro(fontSize: 12,
+                    style: TextStyle(
+                      fontFamily: 'Be Vietnam Pro',
+                      fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: AppColors.outline,
                     ),
@@ -1133,14 +1185,18 @@ class _LongPressBroadcastButtonState extends State<_LongPressBroadcastButton>
                     children: [
                       Text(
                         widget.title,
-                        style: GoogleFonts.plusJakartaSans(fontSize: 20,
+                        style: const TextStyle(
+                          fontFamily: 'Plus Jakarta Sans',
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: AppColors.onPrimaryContainer,
                         ),
                       ),
                       Text(
                         widget.subtitle,
-                        style: GoogleFonts.beVietnamPro(fontSize: 14,
+                        style: TextStyle(
+                          fontFamily: 'Be Vietnam Pro',
+                          fontSize: 14,
                           color: AppColors.onPrimaryContainer.withOpacity(0.9),
                         ),
                       ),
@@ -1272,7 +1328,7 @@ class _AnimatedTrolleyMockupState extends State<_AnimatedTrolleyMockup>
               offset: Offset(_animation.value, 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Icon(
                     Icons.pets,
                     size: 32,
@@ -1293,5 +1349,3 @@ class _AnimatedTrolleyMockupState extends State<_AnimatedTrolleyMockup>
     );
   }
 }
-
-
